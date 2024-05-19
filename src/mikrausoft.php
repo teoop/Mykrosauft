@@ -213,12 +213,12 @@ cursor: pointer;
 <nav class="nav-bar">
     <div class="icon-nav">
         <i class="fas fa-moon"></i>
-        <span class="logo"><img src="C:\Users\lloyd\Vidéos à monter\logo mikorosauft\Capture_d_écran_2024-03-21_162654-removebg-preview.png" style="width: 100px; height: auto;margin-top: 19px;"></span>
+        <span class="logo"><img src="C:\xampp\htdocs\mikrausoft\img\logomikrausoft.png" style="width: 100px; height: auto;margin-top: 19px;"></span>
     </div>
 
     <ul class="list-nav-bar active">
-        <li class="list-item"><a href="bienvenue.html">Accueil</a></li>
-        <li class="list-item"><a href="equipe.html">Service</a></li>
+        <li class="list-item"><a href="mikrausoft.php">Accueil</a></li>
+        <li class="list-item"><a href="service.html">Service</a></li>
         <li class="list-item"><a href="information.html">Information</a></li>
         <li class="list-item"><a href="contact.html">Contact</a></li>
         <li class="list-item"><a href="inscriptionconnexion.php">Connexion</a></li>

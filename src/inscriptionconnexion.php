@@ -44,7 +44,7 @@ body {
 }
 
 .form-container.signup-active {
-    transform: translateX(-120%);
+    transform: translateX(-115%);
 }
 
 .form-box {
@@ -54,7 +54,7 @@ body {
 }
 
 h1 {
-    color: #fff;
+    color: white;
     font-weight: 600;
     margin-bottom: 20px;
 }
