@@ -23,6 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "INSERT INTO users (username, email, phone, password) VALUES ('$user', '$email', '$phone', '$pass')";
 
     if ($conn->query($sql) === TRUE) {
+        // Démarrer une session
+        session_start();
+        $_SESSION['username'] = $user;
+        $_SESSION['email'] = $email;
         // Rediriger vers la page "moncompte.php"
         header("Location: moncompte.php");
         exit();
@@ -32,17 +36,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Fermer la connexion
     $conn->close();
-} else {
-    echo "Invalid request method.";
 }
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-    
-    // Le reste de votre code...
-}
-
 ?>
-

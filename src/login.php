@@ -29,8 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($pass, $row['password'])) {
             // Mot de passe correct, démarrer une session
             $_SESSION['username'] = $row['username'];
-            // Rediriger vers le tableau de bord
-            header("Location: dashboard.php");
+            $_SESSION['email'] = $row['email'];
+            // Rediriger vers la page "moncompte.php"
+            header("Location: moncompte.php");
             exit();
         } else {
             // Mot de passe incorrect
