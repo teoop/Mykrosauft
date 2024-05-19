@@ -68,6 +68,11 @@ button{
     height: 60px;
     background-color: rgba(0, 0, 0, 0.2);
     max-width:100%;
+    position: fixed; /* Ajout de la propriété pour que la barre reste fixe */
+    width: 100%;
+    z-index: 1000; /* Assure que la barre reste au-dessus du contenu */
+    
+    
 }
 
 
@@ -79,6 +84,7 @@ button{
     display: flex;
     gap: 20px;
     text-align: center;
+    
     
 }
 
@@ -122,6 +128,7 @@ button{
     font-size: 3.5rem;
     text-align: center;
     color : aquamarine;
+    
 }
 
 
@@ -157,6 +164,7 @@ cursor: pointer;
 
     .list-nav-bar.active {
         right: 0;
+      
         
         
     }
@@ -173,6 +181,8 @@ cursor: pointer;
         transition: 0.7s;
         gap: 18px;
         border-radius: 0 0 10px 10px;
+        
+        
         
     }
 
@@ -207,15 +217,16 @@ cursor: pointer;
     </div>
 
     <ul class="list-nav-bar active">
-        <li class="list-item"><a href="bienvenue.html">bienvenue</a></li>
-        <li class="list-item"><a href="equipe.html">Notre equipe</a></li>
-        <li class="list-item"><a href="inscriptionconnexion.html">Connexion</a></li>
+        <li class="list-item"><a href="bienvenue.html">Accueil</a></li>
+        <li class="list-item"><a href="equipe.html">Service</a></li>
+        <li class="list-item"><a href="information.html">Information</a></li>
         <li class="list-item"><a href="contact.html">Contact</a></li>
+        <li class="list-item"><a href="inscriptionconnexion.html">Connexion</a></li>
         
     <div class="fas burger-menu" id="burger-menu">&#9776;</div>
 </nav>
 
-<div class="info">
+<div class="info"><br><br><br><br><br>
     
     
     
@@ -223,7 +234,7 @@ cursor: pointer;
 </div><br><br>
 <div class="info">
     <p id="typewriter" style="font-size: 60px; color: white;"><strong></strong></p>
-    <p style="font-size: 30px; color: white;">Nous nous devons de vous offrir le meilleur possible<br> à chaque début (texte random)</p>
+    <p style="font-size: 30px; color: white;">Nous nous devons de vous offrir le meilleur possible<br> à chaque début</p>
 </div><br><br>
 
 
@@ -235,7 +246,14 @@ cursor: pointer;
 
 <button>
     <strong>
-        EN SAVOIR PLUS
+        <li class=""><a style="text-decoration:none; color:black;" href="savoirplus.html">EN SAVOIR PLUS</a></li>
+    </strong>
+    
+</button>
+
+<button>
+    <strong>
+        <li class=""><a style="text-decoration:none; color:black;" href="demandedevis.html">DEMANDE DE DEVIS</a></li>
     </strong>
     
 </button>
