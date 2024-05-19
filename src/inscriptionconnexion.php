@@ -18,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('https://www.leptidigital.fr/wp-content/uploads/2022/10/actu-microsoft.jpeg') no-repeat center center/cover;
+    background: url('https://miro.medium.com/v2/resize:fit:1332/1*__bcC-XnhkfzTaR-Nz5eoA.gif') no-repeat center center/cover;
     margin: 0;
 }
 
