@@ -192,13 +192,68 @@ cursor: pointer;
     }
 }
 
+.main-content a {
+        text-decoration: none; /* Supprime la décoration du lien */
+        color: inherit; /* Garde la couleur par défaut */
+        transition: transform 1.3s; /* Ajoute une transition pour l'effet 3D */
+    }
 
+    .main-content a:hover {
+        transform: translateY(-4px) translateZ(3); /* Effet 3D au survol */
+    }
 
 
 
 
         
+    .custom-radio {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
 
+.radio-toggle-button {
+    background-color: aquamarine;
+    color: aquamarine;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    display: block;
+}
+
+.radio-dropdown {
+    display: none;
+}
+
+.radio-dropdown iframe {
+    display: block;
+    border: none;
+}
+
+.close-radio-button {
+    background-color: aquamarine;
+    color: black;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.close-radio-button:hover {
+    
+    transform: scale(1.05);
+    box-shadow: 0 0 20px aquamarine;
+}
+
+@media screen and (max-width: 768px) {
+    .custom-radio {
+        bottom: 10px;
+        right: 10px;
+    }
+}
 
      </style>
      
@@ -213,7 +268,7 @@ cursor: pointer;
 <nav class="nav-bar">
     <div class="icon-nav">
         <i class="fas fa-moon"></i>
-        <span class="logo"><img src="C:\xampp\htdocs\mikrausoft\img\logomikrausoft.png" style="width: 100px; height: auto;margin-top: 19px;"></span>
+        <span class="logo"><img src="logomikrausoft.png" style="width: 100px; height: auto;margin-top: 19px;"></span>
     </div>
 
     <ul class="list-nav-bar active">
@@ -258,12 +313,29 @@ cursor: pointer;
     
 </button>
 
-
 <div class="main-content">
-    <h1>Merci de nous soutenir</h1>
+    <h1><a href="https://www.bs-beaujolais.fr/formations/">Merci de nous soutenir</a></h1>
+</div>
+  
+
+
+
+
+<div class="custom-radio">
+    <input type="checkbox" id="radio-toggle">
+    <label for="radio-toggle" class="radio-toggle-button">
+        <span class="radio-logo">&#128251;</span> Radio Nostalgie
+    </label>
+    <div class="radio-dropdown">
+        <iframe src="http://listen.radionomy.com/radionostalgie-belgique" frameborder="0" scrolling="no" width="100%" height="400"></iframe>
+        <button class="close-radio-button" id="closeRadioButton">Fermer la radio</button>
+    </div>
 </div>
 
-  
+<script src="script.js"></script>
+
+
+
     
 
 <script>
@@ -296,3 +368,17 @@ hamburguer.addEventListener("click", ()=>{
 </script>
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var closeRadioBtn = document.getElementById('closeRadioButton');
+    var toggleRadioBtn = document.getElementById('radio-toggle');
+    var radioDropdown = document.querySelector('.radio-dropdown');
+
+    closeRadioBtn.addEventListener('click', function() {
+        radioDropdown.style.display = 'none';
+        toggleRadioBtn.checked = false;
+    });
+});
+
+</script>
