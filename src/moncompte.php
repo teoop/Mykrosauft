@@ -656,7 +656,7 @@ h2:nth-child(3) {
     </form>
 </div>
 <section>
-		<h1>VS</h1>
+		<h1>et</h1><br>
 		<div class="wrapper">
 			<h2>Glassmorphism</h2>
 			<div class="container-01">	

@@ -24,13 +24,15 @@
     font-family: 'Poppins','Open Sans',Arial;
 }
 
+
 body {
     min-height: 100vh;
-    background-image: url('https://www.leptidigital.fr/wp-content/uploads/2022/10/actu-microsoft.jpeg');
+    background-image: url('img/connexion.png');
+/* Chemin relatif vers l'image */
     background-size: cover;
     background-position: center;
+    cursor: none;
 }
-
 
 button{
             border-radius: 10%;
@@ -204,56 +206,87 @@ cursor: pointer;
 
 
 
-
-        
-    .custom-radio {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 999;
+    .radio-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Positionner à droite */
 }
 
-.radio-toggle-button {
-    background-color: aquamarine;
-    color: aquamarine;
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    display: block;
+.btn-radio {
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: aquamarine; /* Arrière-plan aquamarine */
+  color: black; /* Texte blanc */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.radio-dropdown {
-    display: none;
+.btn-radio:hover {
+  background: #7fffd4; /* Arrière-plan avec hover */
+  box-shadow: 0 4px 20px aquamarine; /* Effet de relief et glow */
+  color: black;
 }
 
-.radio-dropdown iframe {
-    display: block;
-    border: none;
+.radio-box {
+  display: none;
+  position: absolute;
+  bottom: 0; /* Positionner en bas */
+  right: 0; /* Positionner à droite */
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  background: aquamarine; /* Arrière-plan aquamarine */
+  color: black; /* Texte blanc */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.close-radio-button {
-    background-color: aquamarine;
-    color: black;
-    padding: 10px 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    margin-top: 10px;
+.close-icon {
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  color: black; /* Couleur de l'icône */
+  cursor: pointer;
+  float: right;
 }
 
-.close-radio-button:hover {
-    
-    transform: scale(1.05);
-    box-shadow: 0 0 20px aquamarine;
+.close-text {
+  font-size: 16px;
+  color: black; /* Couleur du texte (blanc) */
+  margin-left: 10px; /* Marge à gauche pour l'espacement */
 }
 
-@media screen and (max-width: 768px) {
-    .custom-radio {
-        bottom: 10px;
-        right: 10px;
-    }
+/* Pour le texte en blanc */
+@media (prefers-color-scheme: dark) {
+  .close-text {
+    color: black; /* Couleur du texte (blanc) */
+  }
+}  
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .radio-container {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .btn-radio {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .radio-box {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .close-icon {
+    font-size: 16px;
+  }
 }
+
 
      </style>
      
@@ -268,7 +301,7 @@ cursor: pointer;
 <nav class="nav-bar">
     <div class="icon-nav">
         <i class="fas fa-moon"></i>
-        <span class="logo"><img src="logomikrausoft.png" style="width: 100px; height: auto;margin-top: 19px;"></span>
+        <span class="logo"><img src="img/logomikrausoft.png" style="width: 100px; height: auto;margin-top: 19px;"></span>
     </div>
 
     <ul class="list-nav-bar active">
@@ -321,16 +354,21 @@ cursor: pointer;
 
 
 
-<div class="custom-radio">
-    <input type="checkbox" id="radio-toggle">
-    <label for="radio-toggle" class="radio-toggle-button">
-        <span class="radio-logo">&#128251;</span> Radio Nostalgie
-    </label>
-    <div class="radio-dropdown">
-        <iframe src="http://listen.radionomy.com/radionostalgie-belgique" frameborder="0" scrolling="no" width="100%" height="400"></iframe>
-        <button class="close-radio-button" id="closeRadioButton">Fermer la radio</button>
-    </div>
-</div>
+<!-- radio html -->
+<div class="radio-container">
+        <button class="btn-radio" id="radio-btn">🎵 Radio</button>
+        <div class="radio-box" id="radio-box">
+          <button class="close-icon" id="close-btn">✖</button>
+          <span class="close-text">Cliquez sur la croix pour arrêter la radio !</span>
+          <audio id="radio-player">
+            <source src="https://direct.mouv.fr/live/mouv-midfi.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    
+
+
 
 <script src="script.js"></script>
 
@@ -370,15 +408,53 @@ hamburguer.addEventListener("click", ()=>{
 </html>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var closeRadioBtn = document.getElementById('closeRadioButton');
-    var toggleRadioBtn = document.getElementById('radio-toggle');
-    var radioDropdown = document.querySelector('.radio-dropdown');
 
-    closeRadioBtn.addEventListener('click', function() {
-        radioDropdown.style.display = 'none';
-        toggleRadioBtn.checked = false;
+  document.getElementById('radio-btn').addEventListener('click', function() {
+      var radioBox = document.getElementById('radio-box');
+      radioBox.style.display = 'block';
+      document.getElementById('radio-player').play();
     });
-});
 
+    document.getElementById('close-btn').addEventListener('click', function() {
+      var radioBox = document.getElementById('radio-box');
+      radioBox.style.display = 'none';
+      document.getElementById('radio-player').pause();
+    });
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const emojiCursor = document.createElement('div');
+        emojiCursor.innerHTML = '&#x1F60A;'; // Remplacez ceci par le code de votre emoji
+        emojiCursor.style.position = 'fixed';
+        emojiCursor.style.top = '0';
+        emojiCursor.style.left = '0';
+        emojiCursor.style.pointerEvents = 'none';
+        emojiCursor.style.zIndex = '9999';
+        emojiCursor.style.fontSize = '24px'; // Taille du curseur
+        document.body.appendChild(emojiCursor);
+
+        // Supprimez le curseur par défaut
+        document.body.style.cursor = 'none';
+
+        document.addEventListener('mousemove', function(e) {
+            emojiCursor.style.top = e.pageY + 'px';
+            emojiCursor.style.left = e.pageX + 'px';
+        });
+
+        // Lorsque vous survolez un lien, changez l'emoji de manière aléatoire
+        const links = document.querySelectorAll('a');
+        const emojis = ['&#x1F60A;', '&#x1F600;', '&#x1F618;', '&#x1F44D;', '&#x1F609;']; // Liste des emojis disponibles
+        links.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+                emojiCursor.innerHTML = randomEmoji;
+            });
+            link.addEventListener('mouseleave', function() {
+                emojiCursor.innerHTML = '&#x1F60A;'; // Réinitialisez l'emoji par défaut
+            });
+        });
+    });
+</script>
+
+
