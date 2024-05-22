@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title color="red" font="bold">Mykrôsauft</title>
 
+    <video autoplay muted loop id="bgVideo">
+        <source src="img\logo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
 
     
 
@@ -23,11 +28,42 @@
     box-sizing: border-box;
     font-family: 'Poppins','Open Sans',Arial;
 }
+h1:hover, p:hover {
+            color: white;
+            text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+            animation: flicker 0.05s infinite;
+        }
 
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                text-shadow: white;
+                opacity: 0.7;
+            }
+        }
+
+        #logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            background: url('path/to/logo.png') no-repeat center center;
+            background-size: contain;
+            transition: transform 0.6s ease-in-out, filter 0.6s ease-in-out;
+        }
+
+        #logo:hover {
+            transform: rotate(360deg);
+            filter: blur(5px);
+        }
 
 body {
     min-height: 100vh;
-    background-image: url('img/connexion.png');
+    
 /* Chemin relatif vers l'image */
     background-size: cover;
     background-position: center;
@@ -75,6 +111,38 @@ button{
     z-index: 1000; /* Assure que la barre reste au-dessus du contenu */
     
     
+}
+
+
+.icon-nav {
+            
+            transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+        }
+
+        .icon-nav:hover {
+            transform: rotateY(360deg);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .icon-nav .logo img {
+            width: 100px;
+            height: auto;
+            margin-top: 19px;
+        }
+
+        .icon-nav i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 
@@ -136,10 +204,10 @@ button{
 
 .main-content h1:hover{
 
-    text-shadow: 0 0 5px  aquamarine,
-                        0 0 25px aquamarine,
-                        0 0 50px aquamarine,
-                        0 0 200px aquamarine;
+    text-shadow: 0 0 5px  white,
+                        0 0 25px white,
+                        0 0 50px white,
+                        0 0 200px white;
                 
 cursor: pointer;
 }
@@ -288,12 +356,139 @@ cursor: pointer;
 }
 
 
+.bottom-center {
+            position: fixed;
+            bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .bottom-center h3 a {
+            color: aquamarine;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .bottom-center h3 a:hover {
+            color: aquamarine;
+            text-shadow: 0 0 10px aquamarine, 0 0 20px aquamarine, 0 0 30px aquamarine;
+            transform: perspective(1000px) rotateY(10deg);
+            animation: flicker 0.05s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 0 0 10px aquamarine, 0 0 20px aquamarine, 0 0 30px aquamarine, 0 0 40px aquamarine;
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+                opacity: 0.7;
+            }
+        }
+
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+.jt {
+  position: relative;
+  font-size: 20vmin;
+  font-family: 'Staatliches', sans-serif;
+  text-transform: uppercase;
+  font-display: swap;
+  text-shadow: 0 0 10px aquamarine;
+}
+
+.jt__row {
+  display: block;
+}
+.jt__row:nth-child(1) {
+  clip-path: polygon(-10% 75%, 110% 75%, 110% 110%, -10% 110%);
+}
+.jt__row:nth-child(2) {
+  clip-path: polygon(-10% 50%, 110% 50%, 110% 75.3%, -10% 75.3%);
+}
+.jt__row:nth-child(3) {
+  clip-path: polygon(-10% 25%, 110% 25%, 110% 50.3%, -10% 50.3%);
+}
+.jt__row:nth-child(4) {
+  clip-path: polygon(-10% 0%, 110% 0%, 110% 25.3%, -10% 25.3%);
+}
+
+.jt__row.jt__row--sibling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  witdh:800px;
+}
+
+.jt__text {
+  display: block;
+  transform-origin: bottom left;
+  animation: moveIn 4s 0s cubic-bezier(.36,0,.06,1) alternate infinite ;
+}
+.jt__row:nth-child(1) .jt__text {
+  transform: translateY(-0.1em);
+}
+.jt__row:nth-child(2) .jt__text {
+  transform: translateY(-0.3em) scaleY(1.1);
+}
+.jt__row:nth-child(3) .jt__text {
+  transform: translateY(-0.5em) scaleY(1.2) ;
+}
+.jt__row:nth-child(4) .jt__text {
+  transform: translateY(-0.7em) scaleY(2.3) ;
+}
+.jt__row:nth-child(5) .jt__text {
+  transform: translateY(-0.9em) scaleY(3.4) ;
+}
+.jt__row:nth-child(6) .jt__text {
+  transform: translateY(-1.1em) scaleY(7.5) ;
+}
+
+@keyframes moveIn {
+  50%, 100% { 
+    transform: translateY(0em)
+  }
+  0%   { 
+  opacity: 0; 
+  filter: blur(10px);
+  
+  }
+  100% { 
+  opacity: 1; 
+  filter: blur(0px);
+  }
+}
+
+
+
+.debug .jt__row:nth-child(even) {
+  color: black;
+  background: white;
+}
+.debug .jt__row:nth-child(odd) {
+  color: white;
+  background: black;
+}
+
+* { box-sizing: border-box }
+
+
+        
+
+
+
      </style>
      
 </head>
 <body>
    <!-- PARTIE HTML-->   
 
+   
  
 
 
@@ -314,15 +509,30 @@ cursor: pointer;
     <div class="fas burger-menu" id="burger-menu">&#9776;</div>
 </nav>
 
-<div class="info"><br><br><br><br><br>
+<div class="info"><br><br><br><br>
+    
+
+
+<h1 class="jt --debug">
+  <span class="jt__row">
+    <span class="jt__text">INFOGERANCE</span>
+  </span>
+  <span class="jt__row jt__row--sibling" aria-hidden="true">
+    <span class="jt__text">INFOGERANCE</span>
+  </span>
+  <span class="jt__row jt__row--sibling" aria-hidden="true">
+    <span class="jt__text">INFOGERANCE</span>
+  </span>
+  <span class="jt__row jt__row--sibling" aria-hidden="true">
+    <span class="jt__text">INFOGERANCE</span>
+  </span>
+</h1>
+
     
     
-    
-    
-</div><br><br>
+<</div><br><br>
 <div class="info">
-    <p id="typewriter" style="font-size: 60px; color: white;"><strong></strong></p>
-    <p style="font-size: 30px; color: white;">Nous nous devons de vous offrir le meilleur possible<br> à chaque début</p>
+    <p style="font-size: 30px; color: white;" class="tubelight-glow">Nous nous devons de vous offrir le meilleur possible<br> à chaque début</p>
 </div><br><br>
 
 
@@ -346,10 +556,9 @@ cursor: pointer;
     
 </button>
 
-<div class="main-content">
-    <h1><a href="https://www.bs-beaujolais.fr/formations/">Merci de nous soutenir</a></h1>
+<div class="bottom-center">
+        <h3><a href="https://www.bs-beaujolais.fr/formations/">Merci de nous soutenir</a></h3>
 </div>
-  
 
 
 
