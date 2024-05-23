@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services d'infogérance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://i.pinimg.com/originals/0a/8b/a1/0a8ba1f254df17146e9aa237dfb2c7fa.gif'); /* Replace with your background image URL */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 50px;
+            position: relative;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding: 10px;
+            border-radius: 5px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        li:hover {
+            box-shadow: 0 0 15px aquamarine;
+        }
+
+        li::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150px;
+            height: 150px;
+            background: rgba(127, 255, 212, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.3s ease;
+            z-index: -1;
+        }
+
+        li:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: aquamarine;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #7fffd4;
+            box-shadow: 0 0 15px aquamarine;
+        }
+    </style>
+</head>
+<body>
+ 
+<div class="container">
+    <h1>Nos Services d'Infogérance</h1>
+    <h2>Gestion des serveurs</h2>
+    <ul>
+        <li>Surveillance constante, maintenance proactive et résolution rapide des problèmes liés aux serveurs.</li>
+    </ul>
+    <h2>Sauvegarde de données</h2>
+    <ul>
+        <li>Stratégies de sauvegarde avancées pour assurer la sécurité et la récupération fiable des données cruciales.</li>
+    </ul>
+    <h2>Support technique</h2>
+    <ul>
+        <li>Assistance technique réactive et résolution des incidents pour assurer la continuité des activités.</li>
+    </ul>
+    <button onclick="window.location.href='mikrausoft.php'">Retourner à l'accueil</button>
+</div>
+ 
+</body>
+</html>

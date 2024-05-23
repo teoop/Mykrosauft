@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infogérance - Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="glass-card">
+            <h1>Infogérance</h1>
+            <p>L'infogérance est un service proposé par des prestataires spécialisés, consistant à externaliser la gestion et l'exploitation d'un système d'information. Ce service permet aux entreprises de se concentrer sur leur cœur de métier en déléguant la gestion de leur infrastructure informatique à des experts.</p>
+            <h2>Les avantages de l'infogérance :</h2>
+            <ul>
+                <li>Réduction des coûts</li>
+                <li>Accès à des compétences spécialisées</li>
+                <li>Amélioration de la sécurité</li>
+                <li>Disponibilité et continuité de service</li>
+                <li>Suivi et maintenance proactifs</li>
+            </ul>
+            <button class="glass-button" onclick="window.location.href='mikrausoft.php'">Retour à l'accueil</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://static.wixstatic.com/media/59e921_f6d2f5c61a2a463d80d9a4b9c0412f49~mv2.gif'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: white;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.glass-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.glass-button:hover {
+    background-color: aquamarine;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px aquamarine;
+}
+
+</style>
